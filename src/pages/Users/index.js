@@ -10,8 +10,6 @@ import VectorL from "../../assets/vector-left.png";
 
 import Trasher from "../../assets/trasher.svg";
 
-import { useNavigate } from "react-router-dom";
-
 
 import {
   Container,

@@ -10,7 +10,6 @@
  
  import VectorR from "../../assets/vector-right.svg";
  
- 
  import {
    Container,
    H1,
@@ -28,10 +27,6 @@
    // Pega o valor dos Inputs
    const inputName = useRef();
    const inputAge = useRef();
- 
-   // REACT HOOKS => FERRAMENTAS AUXILIARES
-     // UseRef = Pega apenas os dados final , parecido com getElement
-     // UseState = Pega os dados a cada alteração, atrapalhando o desempenho em formulários mais encorpados.
  
      // Um estado no React é imutável
  // Recebe o valor dos inputs e o exibe
