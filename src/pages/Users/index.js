@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect  } from "react";
 
+import { useNavigate } from 'react-router-dom';
+
 import axios from "axios";
 
 import Avatar from "../../assets/peoples.svg";
@@ -24,6 +26,7 @@ import {
 
 function Users() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchUsers() {
@@ -42,6 +45,10 @@ function Users() {
     const newUsers = users.filter((user) => user.id !== userId);
 
     setUsers(newUsers);
+   }
+
+   function backtoHome() {
+     const history = navigate("/")
    }
  
    /* REACT HOOK => userEffect( Efeito Colateral)
@@ -68,7 +75,7 @@ function Users() {
           ))}
         </ul>
 
-        <Button to="/">
+        <Button onClick={(backtoHome)} >
           Voltar <img src={VectorL} alt="vector-left" />
           
         </Button>

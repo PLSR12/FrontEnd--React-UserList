@@ -2,7 +2,7 @@
 
  import React, { useState , useRef } from "react";
 
- import { Link } from "react-router-dom";
+ import { useNavigate } from 'react-router-dom';
 
  import axios from "axios";
 
@@ -23,7 +23,8 @@
  // JSX = mistura do HTML com JS
  function Home() {
    const [users, setUsers] = useState([]);
- 
+   const navigate = useNavigate();
+
    // Pega o valor dos Inputs
    const inputName = useRef();
    const inputAge = useRef();
@@ -37,7 +38,9 @@
    age: inputAge.current.value});
 
    setUsers([...users,newUser]); // spread operator("...") = joga os itens dentro do array correto
-   }
+   
+   navigate('/users')
+  }
 
    // Estrutura HTML com JS
    return (
@@ -52,7 +55,7 @@
          <InputLabel> Idade: </InputLabel>
          <Input  ref={inputAge} placeholder="Idade" />
  
-         <Button to="/users" onClick={addNewUser}>
+         <Button onClick={addNewUser}>
            Cadastrar <img src={VectorR} alt="vector-right" />
          </Button>
  
