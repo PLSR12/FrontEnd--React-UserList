@@ -12,11 +12,12 @@ import VectorL from "../../assets/vector-left.png";
 
 import Trasher from "../../assets/trasher.svg";
 
+import H1 from "../../components/Title";
+
+import ContainerItems from "../../components/Container-Items";
 
 import {
   Container,
-  ContainerItems,
-  H1,
   Image,
   User,
   Button
@@ -60,7 +61,7 @@ function Users() {
   return (
     <Container>
       <Image src={Avatar} alt="logo" />
-      <ContainerItems>
+      <ContainerItems IsBlur={true}>
         <H1> Usuários </H1>
 
         <ul>
