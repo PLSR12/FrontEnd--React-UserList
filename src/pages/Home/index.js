@@ -14,37 +14,39 @@ import H1  from "../../components/Title";
 
 import ContainerItems from "../../components/Container-Items";
 
+import Button from "../../components/Button";
+
 import {
   Container,
   Image,
   InputLabel,
-  Input,
-  Button,
+  Input
 } from "./styles";
 
-// JSX = mistura do HTML com JS
+
 function Home() {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  // Pega o valor dos Inputs
+  
   const inputName = useRef();
   const inputAge = useRef();
 
-  // Um estado no React é imutável
-  // Recebe o valor dos inputs e o exibe
+ 
+ 
   async function addNewUser() {
-    const { data: newUser } = await axios.post("http://localhost:3001/users", {
+    const { data: newUser } = await axios.post("https://git.heroku.com/userlist1.git/users", {
       name: inputName.current.value,
       age: inputAge.current.value,
     });
 
-    setUsers([...users, newUser]); // spread operator("...") = joga os itens dentro do array correto
 
-    navigate("/users");
+    setUsers([...users, newUser]); 
+
+    navigate("http://localhost:3000/users");
   }
 
-  // Estrutura HTML com JS
+
   return (
     <Container>
       <Image src={Peoples} alt="logo" />

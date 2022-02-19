@@ -7,20 +7,17 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 import Avatar from "../../assets/peoples.svg";
-
 import VectorL from "../../assets/vector-left.png";
-
 import Trasher from "../../assets/trasher.svg";
 
 import H1 from "../../components/Title";
-
 import ContainerItems from "../../components/Container-Items";
+import Button from "../../components/Button";
 
 import {
   Container,
   Image,
-  User,
-  Button
+  User
 } from "./styles";
 
 // JSX = mistura do HTML com JS
@@ -31,7 +28,7 @@ function Users() {
 
   useEffect(() => {
     async function fetchUsers() {
-    const {data : newUser } = await axios.get("http://localhost:3001/users");
+    const {data : newUser } = await axios.get("https://git.heroku.com/userlist1.git/users")
     
     setUsers(newUser);
   }
@@ -41,7 +38,7 @@ function Users() {
 
   // Deleta os users cadastrados
  async function deleteUser(userId) {
-   await axios.delete(`http://localhost:3001/users/${userId}`);
+   await axios.delete(`https://git.heroku.com/userlist1.git/users/${userId}`);
 
     const newUsers = users.filter((user) => user.id !== userId);
 
@@ -49,7 +46,7 @@ function Users() {
    }
 
    function backtoHome() {
-     const history = navigate("/")
+      navigate("/")
    }
  
    /* REACT HOOK => userEffect( Efeito Colateral)
@@ -76,8 +73,8 @@ function Users() {
           ))}
         </ul>
 
-        <Button onClick={(backtoHome)} >
-          Voltar <img src={VectorL} alt="vector-left" />
+        <Button isBack={true} onClick={(backtoHome)} >
+        <img src={VectorL} alt="vector-left" /> Voltar 
           
         </Button>
 

@@ -33,7 +33,7 @@ export const Button = styled.button`
   font-size: 17px;
   line-height: 28px;
 
-  background: none;
+  background-color: transparent;
   border-radius: 14px;
 
   display: flex;
