@@ -35,11 +35,11 @@ function Home() {
  
  
   async function addNewUser() {
-    const { data: newUser } = await axios.post("https://user-list-backend.herokuapp.com//users", {
+    const { data: newUser } = await axios.post("https://user-list-backend.herokuapp.com/users", {
       name: inputName.current.value,
       age: inputAge.current.value,
     });
-    
+
     setUsers([...users, newUser]); 
 
     navigate("/users");
