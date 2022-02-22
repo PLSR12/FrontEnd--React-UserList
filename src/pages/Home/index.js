@@ -35,15 +35,14 @@ function Home() {
  
  
   async function addNewUser() {
-    const { data: newUser } = await axios.post("https://git.heroku.com/userlist1.git/users", {
+    const { data: newUser } = await axios.post("https://user-list-backend.herokuapp.com//users", {
       name: inputName.current.value,
       age: inputAge.current.value,
     });
-
-
+    
     setUsers([...users, newUser]); 
 
-    navigate("http://localhost:3000/users");
+    navigate("/users");
   }
 
 

@@ -28,7 +28,7 @@ function Users() {
 
   useEffect(() => {
     async function fetchUsers() {
-    const {data : newUser } = await axios.get("https://git.heroku.com/userlist1.git/users")
+    const {data : newUser } = await axios.get("https://user-list-backend.herokuapp.com/users")
     
     setUsers(newUser);
   }
@@ -38,7 +38,7 @@ function Users() {
 
   // Deleta os users cadastrados
  async function deleteUser(userId) {
-   await axios.delete(`https://git.heroku.com/userlist1.git/users/${userId}`);
+   await axios.delete(`https://user-list-backend.herokuapp.com/users/${userId}`);
 
     const newUsers = users.filter((user) => user.id !== userId);
 
